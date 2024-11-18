@@ -150,37 +150,37 @@ export default function About() {
                         {[
                             {
                                 href: "https://t.me/priscilla_ef/10",
-                                imgSrc: "/images/sns/tg-logo.svg",
+                                imgSrc: "/images/sns/tg.svg",
                                 alt: "Telegram",
                             },
                             {
                                 href: "https://vk.com/priscilla_ef",
-                                imgSrc: "/images/sns/vk-logo.svg",
+                                imgSrc: "/images/sns/vk.svg",
                                 alt: "VK",
                             },
                             {
                                 href: "https://www.instagram.com/masajinobe/",
-                                imgSrc: "/images/sns/inst-logo.svg",
+                                imgSrc: "/images/sns/inst.svg",
                                 alt: "Instagram",
                             },
                             {
                                 href: "https://twitter.com/priscilla_eF",
-                                imgSrc: "/images/sns/x-logo.svg",
+                                imgSrc: "/images/sns/x.svg",
                                 alt: "Twitter",
                             },
                             {
                                 href: "https://boosty.to/priscilla-custom-effects",
-                                imgSrc: "/images/sns/boosty-logo.svg",
+                                imgSrc: "/images/sns/boosty.svg",
                                 alt: "Boosty",
                             },
                             {
                                 href: "https://www.youtube.com/channel/UCVJiYZ7oiHdBnkkOoSrse3Q",
-                                imgSrc: "/images/sns/yt-logo.svg",
+                                imgSrc: "/images/sns/yt.svg",
                                 alt: "YouTube",
                             },
                             {
                                 href: "https://github.com/Priscilla-Custom-Effects",
-                                imgSrc: "/images/sns/git-logo.svg",
+                                imgSrc: "/images/sns/git.svg",
                                 alt: "Github",
                             },
                         ].map((item) => (

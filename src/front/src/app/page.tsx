@@ -37,7 +37,7 @@ export default function Home() {
             <header className="flex justify-between items-start w-full py-4">
                 <div className="absolute top-4 right-4">
                     <Image
-                        src="/images/logo.svg"
+                        src="/images/Logo.png"
                         alt="logo"
                         width={192}
                         height={192}
