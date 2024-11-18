@@ -3,7 +3,7 @@
 This project is created as an online store and information resource for the Priscilla Fx workshop.
 
 <p align="center">
-    <img src="docs/img/preview.png" alt="preview"/>
+    <img src="docs/img/0.png" alt="0"/>
 </p>
 
 ## Deploy
