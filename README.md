@@ -1,83 +1,37 @@
+# Priscilla Fx
+
+This project is created as an online store and information resource for the Priscilla Fx workshop.
+
 <p align="center">
     <img src="docs/img/preview.png" alt="preview"/>
 </p>
 
-<p align="center">
-    <b><em>Priscilla FX</em></b>
-</p>
-
-<p align="center">
-    <em>Проект создан в качестве интернет-магазина и информационного ресурса мастерской Priscilla FX.</em>
-</p>
-
-## Структура проекта
+## Struct
 
 <p align="center">
     <img src="docs/img/diagram.svg" alt="diagram" width="1024px"/>
 </p>
 
-Заметки по стеку:
 
-- [FastAPI](src/backend/api/README.md)
-- [PostgreSQL](src/backend/database/README.md)
-- [Next.js](src/frontend/README.md)
-
-## Деплой
-
-- Для работы потребуется база данных [PostgreSQL](https://www.postgresql.org).
-- [uv](https://github.com/astral-sh/uv) менеджер управления пакетами.
-- [Docker](https://www.docker.com) в качестве контейнера.
-
-Клонировать репозиторий:
+## Deploy
 
 ```sh
-git clone https://github.com/masajinobe-ef/priscillafx-web.git
+$ git clone https://github.com/priscilla-it/priscillafx_web
+$ cd priscillafx_web
+$ docker compose up --build
+$ sudo chmod +x start
+$ ./start
 ```
 
-Сборка контейнеров и запуск:
-
-```sh
-docker compose up --build
-```
-
-## Сайт создан с использованием следующих технологий:
-
-**Backend фреймворк:**
-
-- **FastAPI** - Современный, высокопроизводительный веб-фреймворк для создания API.
-- **FastAPI-Users** - Пакет для управления аутентификацией и регистрацией пользователей в приложениях FastAPI.
-
-**Frontend фреймворк:**
-
-- **Next.js** - Современный, высокопроизводительный веб-фреймворк для создания интерфейсов.
-
-**База данных:**
-
-- **Asyncpg** - Асинхронный интерфейс PostgreSQL.
-- **SQLModel** - Предназначена для упрощения взаимодействия с базами данных SQL в приложениях FastAPI.
-- **SQLAlchemy** - SQL-инструментарий и система объектно-реляционного отображения (ORM).
-- **Alembic** - Инструмент миграции базы данных.
-
-**Кэширование данных:**
-
-- **FastAPI-Cache** - Пакет для кэширования с помощью Redis.
-- **Redis** - Система хранения данных в памяти, используемая в качестве базы данных, кэша и брокера сообщений.
-
-**Развёртывание приложения:**
-
-- **Docker** - Платформа для разработки, доставки и запуска приложений в контейнерах.
-
-Сайт имеет систему аутентификации пользователей с использованием **JSON Web Tokens (JWT)** и **cookie**.
-Имеет систему миграции базы данных с помощью **Alembic**. Это позволяет легко управлять изменениями схемы базы данных.
-
+## Preview
 <p align="center">
     <img src="docs/img/1.png" alt="1"/>
     <img src="docs/img/2.png" alt="2"/>
     <img src="docs/img/3.png" alt="3"/>
 </p>
 
+
 ## License
 
-[![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg?style=for-the-badge)](LICENSE "License")
+Priscilla Fx is licensed under the GPL-3.0 License. You can view the full license text in the [LICENSE](LICENSE) file in the repository.
 
-This project is licensed under GPL-3.0. Please refer to the [LICENSE](LICENSE) file for detailed license information.

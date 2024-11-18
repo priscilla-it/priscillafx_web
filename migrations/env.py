@@ -3,27 +3,15 @@ Written by masajinobe-ef
 """
 
 from logging.config import fileConfig
-
-# Alembic
 from alembic import context
-
-# SQLAlchemy
 from sqlalchemy import engine_from_config, pool
-
-# SQLModel
 from sqlmodel import SQLModel
-
-# Config
-from src.backend.config import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER
-
-# Database
 from src.backend.database.db import Base
-from src.backend.database.models.artist.models import *
-from src.backend.database.models.auth.models import *
-
-# Models
-from src.backend.database.models.blog.models import *
-from src.backend.database.models.custom.models import *
+from src.backend.config import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER
+from src.backend.database.models.artist_models import *
+from src.backend.database.models.auth_models import *
+from src.backend.database.models.blog_models import *
+from src.backend.database.models.custom_models import *
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

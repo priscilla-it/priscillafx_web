@@ -11,24 +11,24 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "./nginx.conf:/etc/nginx/nginx.conf"
-      - "/etc/letsencrypt:/etc/letsencrypt"
+      - "./nginx.conf"
+      - "/etc/letsencrypt"
     depends_on:
-      - backend
-      - frontend
+      - back
+      - front
     networks:
       - deploy_pfx
 
   # FastAPI + PostgreSQL
-  backend:
+  back:
     build:
-      context: ./backend
+      context: ./src/back
     networks:
       - deploy_pfx
 
   # Next.js
-  frontend:
+  front:
     build:
-      context: ./frontend
+      context: ./src/front
     networks:
       - deploy_pfx
