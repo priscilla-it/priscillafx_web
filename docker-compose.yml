@@ -1,0 +1,34 @@
+# TODO Добавить такие сервисы как Redis, Celery (flower)
+
+networks:
+  deploy_pfx:
+
+services:
+  # Nginx config
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./nginx.conf"
+      - "/etc/letsencrypt"
+    depends_on:
+      - back
+      - front
+    networks:
+      - deploy_pfx
+
+  # FastAPI + PostgreSQL
+  back:
+    build:
+      context: ./src/back
+    networks:
+      - deploy_pfx
+
+  # Next.js
+  front:
+    build:
+      context: ./src/front
+    networks:
+      - deploy_pfx
