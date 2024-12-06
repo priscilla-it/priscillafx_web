@@ -116,3 +116,4 @@ def downgrade() -> None:
     op.drop_table('Blog')
     op.drop_table('Artists')
     # ### end Alembic commands ###
+
