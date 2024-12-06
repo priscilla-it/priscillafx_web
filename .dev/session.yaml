@@ -1,0 +1,13 @@
+session_name: pfx-dev
+start_directory: ~/ghq/github.com/priscilla-it/priscillafx-web
+windows:
+  - window_name: Editor
+    panes:
+      - shell_command:
+          - nvim
+
+  - window_name: Shell
+    panes:
+      - shell_command:
+          - zsh
+
