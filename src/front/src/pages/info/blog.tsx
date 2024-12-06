@@ -6,9 +6,9 @@ import NavBar from "../../components/navbar";
 
 interface Post {
     created_at: string;
-    image_url: string;
     title: string;
     content: string;
+    image_url?: string;
     file_url?: string;
 }
 
@@ -77,31 +77,38 @@ export default function Blog() {
                                     {post.created_at}
                                 </div>
                                 <div>
-                                    <a
-                                        href={post.image_url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Image
-                                            className="image rounded-lg"
-                                            src={post.image_url}
-                                            alt="image"
-                                            width={720}
-                                            height={480}
-                                        />
-                                    </a>
+                                    {post.image_url && (
+                                        <a href={post.image_url} target="_blank" rel="noopener noreferrer">
+                                            <Image
+                                                className="image rounded-lg"
+                                                src={post.image_url}
+                                                alt="image"
+                                                width={720}
+                                                height={480}
+                                            />
+                                        </a>
+                                    )}
                                 </div>
                                 <h2 className="title text-2xl mt-2">{post.title}</h2>
                                 <div className="content text-gray-300">{post.content}</div>
                                 {post.file_url && (
-                                    <a
-                                        href={post.file_url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-blue-400"
-                                    >
-                                        Download
-                                    </a>
+                                    <div className="mt-4">
+                                        <a
+                                            href={post.file_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200"
+                                        >
+                                            <Image
+                                                src="/images/icons/download.svg"
+                                                alt="Download"
+                                                width={20}
+                                                height={20}
+                                                className="mr-2"
+                                            />
+                                            <span>Download</span>
+                                        </a>
+                                    </div>
                                 )}
                             </div>
                         ))
@@ -121,3 +128,4 @@ export default function Blog() {
         </div>
     );
 }
+

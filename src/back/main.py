@@ -14,7 +14,7 @@ from redis import asyncio as aioredis
 from icecream import ic
 from logger import logger
 from config import REDIS_HOST, REDIS_PORT
-from api.routers.artist.router import artist_router
+from api.routers.artists.router import artists_router
 from api.routers.auth.router import auth_router
 from api.routers.blog.router import blog_router
 from api.routers.custom.router import custom_router
@@ -58,7 +58,7 @@ app = FastAPI(
 app.include_router(auth_router)
 app.include_router(blog_router)
 app.include_router(custom_router)
-app.include_router(artist_router)
+app.include_router(artists_router)
 app.include_router(tasks_router)
 
 
@@ -74,12 +74,15 @@ async def favicon():
 
 
 # CORS
+origins = [
+    'http://localhost',
+    'http://localhost:50160',  # Next.js local port
+    # TODO 'http://localhost', VDS IP
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        'http://localhost:50160',  # Next.js local port
-        # TODO 'http://localhost', VDS IP
-    ],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=['GET', 'POST', 'OPTIONS', 'DELETE', 'PATCH', 'PUT'],
     allow_headers=[

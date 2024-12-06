@@ -89,6 +89,22 @@ def upgrade() -> None:
         ),
         sa.PrimaryKeyConstraint('id'),
     )
+
+    # Insert roles into the Role table
+    role_table = sa.table(
+        'Role',
+        sa.Column('id', sa.Integer, nullable=False),
+        sa.Column('name', sa.String, nullable=False),
+        sa.Column('permissions', sa.JSON, nullable=True),
+    )
+
+    op.bulk_insert(
+        role_table,
+        [
+            {'id': 1, 'name': 'User', 'permissions': None},
+            {'id': 2, 'name': 'Admin', 'permissions': None},
+        ],
+    )
     # ### end Alembic commands ###
 
 

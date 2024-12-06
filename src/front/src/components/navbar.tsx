@@ -26,6 +26,7 @@ const NavBar: FC = () => {
                                     width={32}
                                     height={32}
                                     className="inline-block mr-1 filter brightness-0 invert"
+                                    priority
                                 />
                                 {item.label}
                             </a>

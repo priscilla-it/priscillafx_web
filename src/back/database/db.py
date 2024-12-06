@@ -2,7 +2,7 @@
 Written by masajinobe-ef
 """
 
-from typing import Any, AsyncGenerator
+from typing import AsyncGenerator
 from sqlmodel import SQLModel
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.ext.asyncio import (
@@ -24,22 +24,18 @@ class Base(AsyncAttrs, DeclarativeBase):
     pass
 
 
-async_engine = create_async_engine(DATABASE_URL, echo=False)
+async_engine = create_async_engine(DATABASE_URL, echo=True)
 async_session = async_sessionmaker(
     async_engine, class_=AsyncSession, expire_on_commit=False
 )
 
 
-async def get_async_session() -> AsyncGenerator[AsyncSession, Any]:
-    """Получить сеанс работы с базой данных.
-    Будет использоваться для внедрения зависимостей.
-    """
-    async with async_session() as session, session.begin():
+async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
+    async with async_session() as session:
         yield session
 
 
 async def init_models() -> None:
-    """Создаёт таблицы, если они ещё не существуют."""
     try:
         async with async_engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)

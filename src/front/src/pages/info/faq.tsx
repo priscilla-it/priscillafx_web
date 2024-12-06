@@ -3,15 +3,15 @@ import "../../styles/globals.css";
 import NavBar from "../../components/navbar";
 import Footer from "../../components/footer";
 
-interface FAQ {
+interface Faq {
     question: string;
     answer: string;
 }
 
-export default function FAQ() {
+export default function Faq() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    const faqs: FAQ[] = [
+    const faqs: Faq[] = [
         {
             question: "1. На чем специализируется Priscilla Custom Effects?",
             answer:

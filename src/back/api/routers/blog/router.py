@@ -52,8 +52,8 @@ async def add_post(
     user: User = Depends(current_superuser),
     title: str = Form(),
     content: str = Form(),
-    image_url: str = Form(None),
-    file_url: str = Form(None),
+    image_url: str = Form(""),
+    file_url: str = Form(""),
 ):
     new_post = Blog(
         title=title, content=content, image_url=image_url, file_url=file_url
